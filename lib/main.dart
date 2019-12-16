@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -37,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
     try {
       await platform.invokeMethod('openUrl', 'http://flutter.dev');
     } on PlatformException catch (e) {
-      log(e.message);
+      print('PlatformException: ${e.message}');
     }
 
     setState(() {
